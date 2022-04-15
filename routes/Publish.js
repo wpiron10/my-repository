@@ -15,9 +15,9 @@ const cloudinary = require("cloudinary").v2;
 // Données à remplacer avec vos credentials :
 
 cloudinary.config({
-  cloud_name: "dskrnrcct",
-  api_key: "669744172887151",
-  api_secret: "4CW175irlMZTjOfNVsj6ppvAj3M",
+  cloud_name: "CLOUD_NAME",
+  api_key: "CLOUD_API_KEY",
+  api_secret: "CLOUD_API_SECRET",
 });
 
 // --------------------------------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ const isAuthenticated = require("../middlewares/isAuthenticated");
 
 // --------------------------------------------------------------------------------------------------------
 // Connexion à la BDD
-mongoose.connect("mongodb://localhost:27017/Vinted");
+mongoose.connect(process.env.MONGODB_URI);
 
 // --------------------------------------------------------------------------------------------------------
 // POST : Création de l'offre avec le middleware isAuthenticated pour vérifier que la personne est connectée
