@@ -14,7 +14,7 @@ const app = express();
 app.use(cors());
 
 // on utilise `express-formidable` sur toutes les routes
-// cela aura un impact uniquement sur les routes qui reçoivent un FormData
+// cela aura un impact uniquement sur les routes qui reçoivent un FormData (images,etc)
 app.use(formidableMiddleware());
 
 // --------------------------------------------------------------------------------------------------------
@@ -54,4 +54,4 @@ app.all("*", (req, res) => {
 // --------------------------------------------------------------------------------------------------------
 // Lancement du serveur
 
-app.listen(PORT, () => console.log("Server started"));
+app.listen(process.env.PORT, () => console.log("Server started"));
